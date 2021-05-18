@@ -7,10 +7,10 @@ class Lexer:
     def tokenize(self, string):
         stream = list()
         numbers = re.findall(r'[0-9]+', string)
-        print("NUMBERS ", numbers)
+        string = re.sub(r'[0-9]+', '?', string)
         for i in range(len(string)):
-            if re.match(r'[0-9]+', string[i]):
-                stream.append(Token('i', string[i]))
+            if re.match(r'\?', string[i]):
+                stream.append(Token('i', numbers.pop(0)))
             elif re.match(r'\+', string[i]):
                 stream.append(Token('+', string[i]))
             elif re.match(r'\-', string[i]):
