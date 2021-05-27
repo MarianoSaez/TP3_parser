@@ -42,7 +42,7 @@ class Token:
 
     def __repr__(self):
         if self.value == "NoTerm":
-            return str(f"{self.value}")
+            return str(f"{self.cat}")
         else:
             return str(f"{self.cat}")
 

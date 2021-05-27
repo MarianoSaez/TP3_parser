@@ -8,4 +8,5 @@ print("======== Actualmente se solo se soportan operaciones de + ; - ; () ======
 string = input("\nIngrese una cadena para evaluar: ")
 token_stream = Lexer(string).get_token_stream()
 tree = Parser(token_stream, tabla, terminales, no_terminales).parse()
-print(tree.evaluate())
+print(f"\n\nResultado: {tree.evaluate()}\n")
+print("===========================================================================")
